@@ -1,15 +1,10 @@
-# This .spec config file tells Buildozer an app's requirements for being built.
-#
-# It largely follows the syntax of an .ini file.
-# See the end of the file for more details and warnings about common mistakes.
-
 [app]
 
 # (str) Title of your application
-title = My Application
+title = Icons kivyApp
 
 # (str) Package name
-package.name = myapp
+package.name = icon_list_app
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -17,16 +12,16 @@ package.domain = org.test
 # (str) Source code where the main.py live
 source.dir = .
 
-# (list) Source files to include (leave empty to include all the files)
+# (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
 
-# (list) Source files to exclude (leave empty to not exclude anything)
+# (list) Source files to exclude (let empty to not exclude anything)
 #source.exclude_exts = spec
 
-# (list) List of directory to exclude (leave empty to not exclude anything)
+# (list) List of directory to exclude (let empty to not exclude anything)
 #source.exclude_dirs = tests, bin, venv
 
 # (list) List of exclusions using pattern matching
@@ -42,20 +37,20 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3==3.10.5,kivy, kivymd, pillow
+requirements = python3,kivy, kivymd
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-#presplash.filename = %(source.dir)s/data/presplash.png
+presplash.filename = icon_icon.png
 
 # (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
+icon.filename = icon_icon.png
 
 # (list) Supported orientations
-# Valid options are: landscape, portrait, portrait-reverse, landscape-reverse, or all
+# Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
 orientation = portrait
 
 # (list) List of services to declare
