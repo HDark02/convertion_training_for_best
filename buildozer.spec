@@ -6,10 +6,10 @@
 [app]
 
 # (str) Title of your application
-title =Iconlist
+title = My Application
 
 # (str) Package name
-package.name =icon_app
+package.name = myapp
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -18,10 +18,10 @@ package.domain = org.test
 source.dir = .
 
 # (list) Source files to include (leave empty to include all the files)
-source.include_exts = 
+source.include_exts = py,png,jpg,kv,atlas
 
 # (list) List of inclusions using pattern matching
-source.include_patterns = assets/*,images/*.png
+#source.include_patterns = assets/*,images/*.png
 
 # (list) Source files to exclude (leave empty to not exclude anything)
 #source.exclude_exts = spec
@@ -42,20 +42,20 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy, git+https://github.com/kivymd/KivyMD.git@master, pillow
-#requirements = python3,kivy, git+https://github.com/kivymd/KivyMD.git@master, materialyoucolor, asynckivy, asyncgui,  pillow
+requirements = python3,kivy, kivymd
+
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
-android.manifest_hooks = data/manifest.xml
+
 # (str) Presplash of the application
 #presplash.filename = %(source.dir)s/data/presplash.png
 
 # (str) Icon of the application
-icon.filename = icon_icon.png
+#icon.filename = %(source.dir)s/data/icon.png
 
 # (list) Supported orientations
-# Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
+# Valid options are: landscape, portrait, portrait-reverse, landscape-reverse, or all
 orientation = portrait
 
 # (list) List of services to declare
@@ -103,16 +103,16 @@ fullscreen = 0
 
 # (list) Permissions
 # (See https://python-for-android.readthedocs.io/en/latest/buildoptions.html for all the supported syntaxes and properties)
-android.permissions = INTERNET, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
+#android.permissions = android.permission.INTERNET, (name=android.permission.WRITE_EXTERNAL_STORAGE;maxSdkVersion=18)
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-#android.api = 31
+#android.api = 33
 
 # (int) Minimum API your APK / AAB will support.
-#android.minapi = 21
+#android.minapi = 24
 
 # (int) Android SDK version to use
 #android.sdk = 20
@@ -278,7 +278,7 @@ android.accept_sdk_license = True
 #android.uses_library =
 
 # (str) Android logcat filters to use
-android.logcat_filters = *:S python:D
+#android.logcat_filters = *:S python:D
 
 # (bool) Android logcat only display log for activity's pid
 #android.logcat_pid_only = False
@@ -400,6 +400,22 @@ ios.codesign.allowed = false
 
 # (str) The development team to use for signing the release version
 #ios.codesign.development_team.release = <hexstring>
+
+# (str) Justification text to be provided for being able to select media
+#ios.media_usage_description = "<APP> needs to access your media in order to <Do X and Y and Z> "
+
+# (str) Justification text to be provided for being able to use local network
+#ios.local_network_usage_description = "<App> needs permissions to <Do X and Y and Z> in your Local Area Network"
+
+# (str) Camera Usage justification string.
+#ios.camera_usage_description = "<App> uses Camera to do <X and Y and Z>"
+
+
+# (bool) Allow StatusBar to be controlled by API
+# ios.viewcontroller_based_statusbar_appearance = False
+
+# (str) A Xml String specifying a extension type.
+#ios.app_extensions = [["7zip", "zip"],  ["public.zip-archive"], "org.kivy.myappextensionfile", "<MyCustom> Extension File", "${MACOSX_BUNDLE_ICON_FILE}", "http://mysite.com/myapp/extensions.html"],
 
 # (str) URL pointing to .ipa file to be installed
 # This option should be defined along with `display_image_url` and `full_size_image_url` options.
