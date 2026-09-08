@@ -121,7 +121,7 @@ jobs:
       - name: Install pip dependencies
         run: |
           pip install --upgrade pip
-          pip install "kivy[base]" kivy_examples --no-binary kivy
+          pip install kivy==3.2.1
           pip install kivymd==1.1.1
           pip install buildozer==0.32 cython==0.29.33 git+https://github.com/kivy/plyer.git
 
