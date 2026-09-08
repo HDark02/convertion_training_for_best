@@ -121,6 +121,8 @@ jobs:
       - name: Install pip dependencies
         run: |
           pip install --upgrade pip
+          python -m pip install kivy --pre --no-deps --index-url  https://kivy.org/downloads/simple/
+          python -m pip install "kivy[base]" --pre --extra-index-url https://kivy.org/downloads/simple/
           pip install kivy==3.2.1
           pip install kivymd==1.1.1
           pip install buildozer==0.32 cython==0.29.33 git+https://github.com/kivy/plyer.git
